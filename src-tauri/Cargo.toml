@@ -26,4 +26,5 @@ ollama-rs = { version = "0.2.1", features = ["stream"] }
 thiserror = "2.0.6"
 url = "2.5.4"
 futures-util = "0.3.31"
+tauri-plugin-clipboard-manager = "2.2.0"
 

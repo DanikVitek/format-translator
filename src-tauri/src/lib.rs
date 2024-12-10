@@ -78,7 +78,7 @@ async fn translate<R: Runtime>(
     output_format: String,
     connection: State<'_, Connection>,
     model: String,
-    response_stream: Channel<GenerationResponse>,
+    response_stream: Channel<TranslateResponseChunk>,
 ) -> Result<(), TranslateError> {
     let connection_guard = connection.read().await;
     let connection = connection_guard
@@ -102,22 +102,36 @@ async fn translate<R: Runtime>(
         _ = tx.send(());
     });
     let mut stream = connection.generate_stream(request).await?;
+    if rx.try_recv().is_ok() {
+        response_stream.send(TranslateResponseChunk::EndOfStream)?;
+        return Ok(());
+    }
     while let Some(result) = stream.next().await {
-        let mut responses = result?;
+        let responses = result?;
         let stop = rx.try_recv().is_ok();
-        if stop {
-            if let Some(response) = responses.last_mut() {
-                response.done = true;
-            }
-        }
         for response in responses {
-            response_stream.send(response)?;
+            response_stream.send(response.into())?;
         }
         if stop {
             break;
         }
     }
+    response_stream.send(TranslateResponseChunk::EndOfStream)?;
+
     Ok(())
+}
+
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase", tag = "tag")]
+enum TranslateResponseChunk {
+    Response(GenerationResponse),
+    EndOfStream,
+}
+
+impl From<GenerationResponse> for TranslateResponseChunk {
+    fn from(response: GenerationResponse) -> Self {
+        Self::Response(response)
+    }
 }
 
 #[derive(Debug, thiserror::Error, Serialize)]
@@ -143,6 +157,7 @@ enum TranslateError {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_clipboard_manager::init())
         .manage(Connection::default())
         // .manage(Model::default())
         .invoke_handler(tauri::generate_handler![

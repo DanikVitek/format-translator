@@ -5,15 +5,21 @@
     "npm:@sveltejs/kit@^2.9.0": "2.9.1_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3",
     "npm:@sveltejs/vite-plugin-svelte@5": "5.0.1_svelte@5.10.0__acorn@8.14.0_vite@6.0.3",
     "npm:@tailwindcss/forms@~0.5.9": "0.5.9_tailwindcss@3.4.16__postcss@8.4.49",
+    "npm:@tailwindcss/typography@~0.5.15": "0.5.15_tailwindcss@3.4.16__postcss@8.4.49",
     "npm:@tauri-apps/api@^2.1.0": "2.1.1",
     "npm:@tauri-apps/cli@^2.1.0": "2.1.0",
+    "npm:@tauri-apps/plugin-clipboard-manager@^2.2.0": "2.2.0",
     "npm:@tauri-apps/plugin-shell@^2.2.0": "2.2.0",
     "npm:autoprefixer@^10.4.0": "10.4.20_postcss@8.4.49",
+    "npm:daisyui@^4.12.0": "4.12.20",
+    "npm:marked@^15.0.3": "15.0.3",
     "npm:prettier-plugin-svelte@^3.3.0": "3.3.2_prettier@3.4.2_svelte@5.10.0__acorn@8.14.0",
     "npm:prettier-plugin-tailwindcss@0.6": "0.6.9_prettier@3.4.2_prettier-plugin-svelte@3.3.2__prettier@3.4.2__svelte@5.10.0___acorn@8.14.0_svelte@5.10.0__acorn@8.14.0",
     "npm:prettier@^3.4.0": "3.4.2",
     "npm:svelte-check@^4.1.0": "4.1.1_svelte@5.10.0__acorn@8.14.0_typescript@5.7.2",
+    "npm:svelte-markdown@~0.4.1": "0.4.1_svelte@4.2.19",
     "npm:svelte@^5.10.0": "5.10.0_acorn@8.14.0",
+    "npm:tailwind-merge@^2.5.5": "2.5.5",
     "npm:tailwindcss@^3.4.0": "3.4.16_postcss@8.4.49",
     "npm:tslib@^2.8.0": "2.8.0",
     "npm:typescript@^5.7.0": "5.7.2",
@@ -238,7 +244,7 @@
         "sade",
         "set-cookie-parser",
         "sirv",
-        "svelte",
+        "svelte@5.10.0_acorn@8.14.0",
         "tiny-glob",
         "vite"
       ]
@@ -248,7 +254,7 @@
       "dependencies": [
         "@sveltejs/vite-plugin-svelte",
         "debug",
-        "svelte",
+        "svelte@5.10.0_acorn@8.14.0",
         "vite"
       ]
     },
@@ -260,7 +266,7 @@
         "deepmerge",
         "kleur",
         "magic-string",
-        "svelte",
+        "svelte@5.10.0_acorn@8.14.0",
         "vite",
         "vitefu"
       ]
@@ -269,6 +275,16 @@
       "integrity": "sha512-tM4XVr2+UVTxXJzey9Twx48c1gcxFStqn1pQz0tRsX8o3DvxhN5oY5pvyAbUx7VTaZxpej4Zzvc6h+1RJBzpIg==",
       "dependencies": [
         "mini-svg-data-uri",
+        "tailwindcss"
+      ]
+    },
+    "@tailwindcss/typography@0.5.15_tailwindcss@3.4.16__postcss@8.4.49": {
+      "integrity": "sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==",
+      "dependencies": [
+        "lodash.castarray",
+        "lodash.isplainobject",
+        "lodash.merge",
+        "postcss-selector-parser@6.0.10",
         "tailwindcss"
       ]
     },
@@ -320,6 +336,12 @@
         "@tauri-apps/cli-win32-x64-msvc"
       ]
     },
+    "@tauri-apps/plugin-clipboard-manager@2.2.0": {
+      "integrity": "sha512-sIBrW/HioKq2vqomwwcU/Y8ygAv3DlS32yKPBX5XijCc0IyQKiDxYpGqmvE9DC5Y0lNJ/G53dfS961B31wjJ1g==",
+      "dependencies": [
+        "@tauri-apps/api"
+      ]
+    },
     "@tauri-apps/plugin-shell@2.2.0": {
       "integrity": "sha512-iC3Ic1hLmasoboG7BO+7p+AriSoqAwKrIk+Hpk+S/bjTQdXqbl2GbdclghI4gM32X0bls7xHzIFqhRdrlvJeaA==",
       "dependencies": [
@@ -331,6 +353,9 @@
     },
     "@types/estree@1.0.6": {
       "integrity": "sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw=="
+    },
+    "@types/marked@5.0.2": {
+      "integrity": "sha512-OucS4KMHhFzhz27KxmWg7J+kIYqyqoW5kdIEI319hqARQQUTqhao3M/F+uFnDXD0Rg72iDDZxZNxq5gvctmLlg=="
     },
     "acorn-typescript@1.4.13_acorn@8.14.0": {
       "integrity": "sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==",
@@ -439,6 +464,16 @@
         "readdirp@4.0.2"
       ]
     },
+    "code-red@1.0.4": {
+      "integrity": "sha512-7qJWqItLA8/VPVlKJlFXU+NBlo/qyfs39aJcuMT/2ere32ZqvF5OSxgdM5xOfJJ7O429gg2HM47y8v9P+9wrNw==",
+      "dependencies": [
+        "@jridgewell/sourcemap-codec",
+        "@types/estree",
+        "acorn",
+        "estree-walker",
+        "periscopic"
+      ]
+    },
     "color-convert@2.0.1": {
       "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
       "dependencies": [
@@ -462,8 +497,34 @@
         "which"
       ]
     },
+    "css-selector-tokenizer@0.8.0": {
+      "integrity": "sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==",
+      "dependencies": [
+        "cssesc",
+        "fastparse"
+      ]
+    },
+    "css-tree@2.3.1": {
+      "integrity": "sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==",
+      "dependencies": [
+        "mdn-data",
+        "source-map-js"
+      ]
+    },
     "cssesc@3.0.0": {
       "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg=="
+    },
+    "culori@3.3.0": {
+      "integrity": "sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ=="
+    },
+    "daisyui@4.12.20": {
+      "integrity": "sha512-uHr3SQsd2yTjRdVuswTiqGFvZTxX0sGSBRa8JJdbKgmZCk/kRFh4B7Z2jg9vLIdwsHTHPyPgCkZadQo1ce0tAw==",
+      "dependencies": [
+        "css-selector-tokenizer",
+        "culori",
+        "picocolors",
+        "postcss-js"
+      ]
     },
     "debug@4.4.0": {
       "integrity": "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==",
@@ -537,6 +598,12 @@
         "@types/estree"
       ]
     },
+    "estree-walker@3.0.3": {
+      "integrity": "sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==",
+      "dependencies": [
+        "@types/estree"
+      ]
+    },
     "fast-glob@3.3.2": {
       "integrity": "sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==",
       "dependencies": [
@@ -546,6 +613,9 @@
         "merge2",
         "micromatch"
       ]
+    },
+    "fastparse@1.1.2": {
+      "integrity": "sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ=="
     },
     "fastq@1.17.1": {
       "integrity": "sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==",
@@ -674,6 +744,15 @@
     "locate-character@3.0.0": {
       "integrity": "sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA=="
     },
+    "lodash.castarray@4.4.0": {
+      "integrity": "sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q=="
+    },
+    "lodash.isplainobject@4.0.6": {
+      "integrity": "sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA=="
+    },
+    "lodash.merge@4.6.2": {
+      "integrity": "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ=="
+    },
     "lru-cache@10.4.3": {
       "integrity": "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ=="
     },
@@ -682,6 +761,15 @@
       "dependencies": [
         "@jridgewell/sourcemap-codec"
       ]
+    },
+    "marked@15.0.3": {
+      "integrity": "sha512-Ai0cepvl2NHnTcO9jYDtcOEtVBNVYR31XnEA3BndO7f5As1wzpcOceSUM8FDkNLJNIODcLpDTWay/qQhqbuMvg=="
+    },
+    "marked@5.1.2": {
+      "integrity": "sha512-ahRPGXJpjMjwSOlBoTMZAK7ATXkli5qCPxZ21TG44rx1KEo44bii4ekgTDQPNRQ4Kh7JMb9Ub1PVk1NxRSsorg=="
+    },
+    "mdn-data@2.0.30": {
+      "integrity": "sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA=="
     },
     "merge2@1.4.1": {
       "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg=="
@@ -756,6 +844,14 @@
         "minipass"
       ]
     },
+    "periscopic@3.1.0": {
+      "integrity": "sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==",
+      "dependencies": [
+        "@types/estree",
+        "estree-walker",
+        "is-reference"
+      ]
+    },
     "picocolors@1.1.1": {
       "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="
     },
@@ -796,7 +892,14 @@
       "integrity": "sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ==",
       "dependencies": [
         "postcss",
-        "postcss-selector-parser"
+        "postcss-selector-parser@6.1.2"
+      ]
+    },
+    "postcss-selector-parser@6.0.10": {
+      "integrity": "sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==",
+      "dependencies": [
+        "cssesc",
+        "util-deprecate"
       ]
     },
     "postcss-selector-parser@6.1.2": {
@@ -821,7 +924,7 @@
       "integrity": "sha512-kRPjH8wSj2iu+dO+XaUv4vD8qr5mdDmlak3IT/7AOgGIMRG86z/EHOLauFcClKEnOUf4A4nOA7sre5KrJD4Raw==",
       "dependencies": [
         "prettier",
-        "svelte"
+        "svelte@5.10.0_acorn@8.14.0"
       ]
     },
     "prettier-plugin-tailwindcss@0.6.9_prettier@3.4.2_prettier-plugin-svelte@3.3.2__prettier@3.4.2__svelte@5.10.0___acorn@8.14.0_svelte@5.10.0__acorn@8.14.0": {
@@ -978,8 +1081,35 @@
         "fdir",
         "picocolors",
         "sade",
-        "svelte",
+        "svelte@5.10.0_acorn@8.14.0",
         "typescript"
+      ]
+    },
+    "svelte-markdown@0.4.1_svelte@4.2.19": {
+      "integrity": "sha512-pOlLY6EruKJaWI9my/2bKX8PdTeP5CM0s4VMmwmC2prlOkjAf+AOmTM4wW/l19Y6WZ87YmP8+ZCJCCwBChWjYw==",
+      "dependencies": [
+        "@types/marked",
+        "marked@5.1.2",
+        "svelte@4.2.19"
+      ]
+    },
+    "svelte@4.2.19": {
+      "integrity": "sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==",
+      "dependencies": [
+        "@ampproject/remapping",
+        "@jridgewell/sourcemap-codec",
+        "@jridgewell/trace-mapping",
+        "@types/estree",
+        "acorn",
+        "aria-query",
+        "axobject-query",
+        "code-red",
+        "css-tree",
+        "estree-walker",
+        "is-reference",
+        "locate-character",
+        "magic-string",
+        "periscopic"
       ]
     },
     "svelte@5.10.0_acorn@8.14.0": {
@@ -999,6 +1129,9 @@
         "magic-string",
         "zimmerframe"
       ]
+    },
+    "tailwind-merge@2.5.5": {
+      "integrity": "sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA=="
     },
     "tailwindcss@3.4.16_postcss@8.4.49": {
       "integrity": "sha512-TI4Cyx7gDiZ6r44ewaJmt0o6BrMCT5aK5e0rmJ/G9Xq3w7CX/5VXl/zIPEJZFUK5VEqwByyhqNPycPlvcK4ZNw==",
@@ -1022,7 +1155,7 @@
         "postcss-js",
         "postcss-load-config",
         "postcss-nested",
-        "postcss-selector-parser",
+        "postcss-selector-parser@6.1.2",
         "resolve",
         "sucrase"
       ]
@@ -1126,16 +1259,21 @@
         "npm:@sveltejs/kit@^2.9.0",
         "npm:@sveltejs/vite-plugin-svelte@5",
         "npm:@tailwindcss/forms@~0.5.9",
+        "npm:@tailwindcss/typography@~0.5.15",
         "npm:@tauri-apps/api@^2.1.0",
         "npm:@tauri-apps/cli@^2.1.0",
+        "npm:@tauri-apps/plugin-clipboard-manager@^2.2.0",
         "npm:@tauri-apps/plugin-shell@^2.2.0",
         "npm:autoprefixer@^10.4.0",
         "npm:daisyui@^4.12.0",
+        "npm:marked@^15.0.3",
         "npm:prettier-plugin-svelte@^3.3.0",
         "npm:prettier-plugin-tailwindcss@0.6",
         "npm:prettier@^3.4.0",
         "npm:svelte-check@^4.1.0",
+        "npm:svelte-markdown@~0.4.1",
         "npm:svelte@^5.10.0",
+        "npm:tailwind-merge@^2.5.5",
         "npm:tailwindcss@^3.4.0",
         "npm:tslib@^2.8.0",
         "npm:typescript@^5.7.0",
