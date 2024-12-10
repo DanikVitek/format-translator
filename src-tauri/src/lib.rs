@@ -91,8 +91,10 @@ async fn translate<R: Runtime>(
     let input_format = (!input_format.is_empty()).then_some(input_format);
 
     let prompt = format!(
-        "Translate this input of format {} to format {output_format}. Don't explain anything, be concise, write only the translation.\nInput:\n{input}",
-        input_format.unwrap_or("auto")
+        include_str!("../PROMPT.txt"),
+        inp_fmt = input_format.unwrap_or("auto"),
+        out_fmt = output_format,
+        inp = input,
     );
 
     let request = GenerationRequest::new(model.to_owned(), prompt);

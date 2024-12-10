@@ -1,0 +1,3 @@
+Translate this input of format {inp_fmt} to format {out_fmt}. Don't explain anything, be concise, write only the translation.
+Input:
+{inp}
