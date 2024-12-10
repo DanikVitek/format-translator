@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "npm:@sveltejs/adapter-static@3": "3.0.6_@sveltejs+kit@2.9.1__@sveltejs+vite-plugin-svelte@5.0.1___svelte@5.10.0____acorn@8.14.0___vite@6.0.3__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3",
+    "npm:@sveltejs/kit@^2.10.0": "2.10.1_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3",
     "npm:@sveltejs/kit@^2.9.0": "2.9.1_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3",
     "npm:@sveltejs/vite-plugin-svelte@5": "5.0.1_svelte@5.10.0__acorn@8.14.0_vite@6.0.3",
     "npm:@tailwindcss/forms@~0.5.9": "0.5.9_tailwindcss@3.4.16__postcss@8.4.49",
@@ -9,7 +10,6 @@
     "npm:@tauri-apps/api@^2.1.0": "2.1.1",
     "npm:@tauri-apps/cli@^2.1.0": "2.1.0",
     "npm:@tauri-apps/plugin-clipboard-manager@^2.2.0": "2.2.0",
-    "npm:@tauri-apps/plugin-shell@^2.2.0": "2.2.0",
     "npm:autoprefixer@^10.4.0": "10.4.20_postcss@8.4.49",
     "npm:daisyui@^4.12.0": "4.12.20",
     "npm:highlight.js@^11.10.0": "11.10.0",
@@ -227,7 +227,27 @@
     "@sveltejs/adapter-static@3.0.6_@sveltejs+kit@2.9.1__@sveltejs+vite-plugin-svelte@5.0.1___svelte@5.10.0____acorn@8.14.0___vite@6.0.3__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3": {
       "integrity": "sha512-MGJcesnJWj7FxDcB/GbrdYD3q24Uk0PIL4QIX149ku+hlJuj//nxUbb0HxUTpjkecWfHjVveSUnUaQWnPRXlpg==",
       "dependencies": [
-        "@sveltejs/kit"
+        "@sveltejs/kit@2.9.1_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3"
+      ]
+    },
+    "@sveltejs/kit@2.10.1_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3": {
+      "integrity": "sha512-2aormKTn94aU8Lfxj4gcbRGh1Dyw0hCFlNo51+njdRDn9P2ERuWC4bOtTuoy5HJpPYR3AH8oaaEjKDWUHbi1OA==",
+      "dependencies": [
+        "@sveltejs/vite-plugin-svelte",
+        "@types/cookie",
+        "cookie",
+        "devalue",
+        "esm-env",
+        "import-meta-resolve",
+        "kleur",
+        "magic-string",
+        "mrmime",
+        "sade",
+        "set-cookie-parser",
+        "sirv",
+        "svelte@5.10.0_acorn@8.14.0",
+        "tiny-glob",
+        "vite"
       ]
     },
     "@sveltejs/kit@2.9.1_@sveltejs+vite-plugin-svelte@5.0.1__svelte@5.10.0___acorn@8.14.0__vite@6.0.3_svelte@5.10.0__acorn@8.14.0_vite@6.0.3": {
@@ -339,12 +359,6 @@
     },
     "@tauri-apps/plugin-clipboard-manager@2.2.0": {
       "integrity": "sha512-sIBrW/HioKq2vqomwwcU/Y8ygAv3DlS32yKPBX5XijCc0IyQKiDxYpGqmvE9DC5Y0lNJ/G53dfS961B31wjJ1g==",
-      "dependencies": [
-        "@tauri-apps/api"
-      ]
-    },
-    "@tauri-apps/plugin-shell@2.2.0": {
-      "integrity": "sha512-iC3Ic1hLmasoboG7BO+7p+AriSoqAwKrIk+Hpk+S/bjTQdXqbl2GbdclghI4gM32X0bls7xHzIFqhRdrlvJeaA==",
       "dependencies": [
         "@tauri-apps/api"
       ]
@@ -1260,14 +1274,13 @@
     "packageJson": {
       "dependencies": [
         "npm:@sveltejs/adapter-static@3",
-        "npm:@sveltejs/kit@^2.9.0",
+        "npm:@sveltejs/kit@^2.10.0",
         "npm:@sveltejs/vite-plugin-svelte@5",
         "npm:@tailwindcss/forms@~0.5.9",
         "npm:@tailwindcss/typography@~0.5.15",
         "npm:@tauri-apps/api@^2.1.0",
         "npm:@tauri-apps/cli@^2.1.0",
         "npm:@tauri-apps/plugin-clipboard-manager@^2.2.0",
-        "npm:@tauri-apps/plugin-shell@^2.2.0",
         "npm:autoprefixer@^10.4.0",
         "npm:daisyui@^4.12.0",
         "npm:highlight.js@^11.10.0",
