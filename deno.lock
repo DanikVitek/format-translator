@@ -12,6 +12,7 @@
     "npm:@tauri-apps/plugin-shell@^2.2.0": "2.2.0",
     "npm:autoprefixer@^10.4.0": "10.4.20_postcss@8.4.49",
     "npm:daisyui@^4.12.0": "4.12.20",
+    "npm:highlight.js@^11.10.0": "11.10.0",
     "npm:marked@^15.0.3": "15.0.3",
     "npm:prettier-plugin-svelte@^3.3.0": "3.3.2_prettier@3.4.2_svelte@5.10.0__acorn@8.14.0",
     "npm:prettier-plugin-tailwindcss@0.6": "0.6.9_prettier@3.4.2_prettier-plugin-svelte@3.3.2__prettier@3.4.2__svelte@5.10.0___acorn@8.14.0_svelte@5.10.0__acorn@8.14.0",
@@ -683,6 +684,9 @@
         "function-bind"
       ]
     },
+    "highlight.js@11.10.0": {
+      "integrity": "sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ=="
+    },
     "import-meta-resolve@4.1.0": {
       "integrity": "sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw=="
     },
@@ -1266,6 +1270,7 @@
         "npm:@tauri-apps/plugin-shell@^2.2.0",
         "npm:autoprefixer@^10.4.0",
         "npm:daisyui@^4.12.0",
+        "npm:highlight.js@^11.10.0",
         "npm:marked@^15.0.3",
         "npm:prettier-plugin-svelte@^3.3.0",
         "npm:prettier-plugin-tailwindcss@0.6",

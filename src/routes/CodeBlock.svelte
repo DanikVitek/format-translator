@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
   import type { MouseEventHandler } from 'svelte/elements';
   import { writeText } from '@tauri-apps/plugin-clipboard-manager';
+  import hljs from 'highlight.js';
 
-  const { children }: { children: Snippet<[]> } = $props();
+  const { language, text }: { language: string; text: string } = $props();
 
   const copyCode: MouseEventHandler<HTMLButtonElement> = async (e) => {
     const btn = e.currentTarget;
@@ -15,6 +15,10 @@
       btn.classList.add('hover:before:opacity-0', 'hover:after:opacity-0');
     }, 1000);
   };
+
+  const hl = $derived(
+    language !== '' ? hljs.highlight(text, { language, ignoreIllegals: true }).value : ''
+  );
 </script>
 
 <div class="relative">
@@ -35,5 +39,5 @@
       />
     </svg>
   </button>
-  <pre class="pr-11">{@render children()}</pre>
+  <pre class="pr-11"><code class={`language-${language}`}>{@html hl}</code></pre>
 </div>

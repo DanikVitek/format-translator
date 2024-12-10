@@ -2,7 +2,7 @@
   import { invoke } from '@tauri-apps/api/core';
   import Translator from './Translator.svelte';
   import { type LocalModel } from '$lib/types';
-  import CopyPre from '$lib/CopyPre.svelte';
+  import CopyPre from './CodeBlock.svelte';
 
   const DEFAULT_HOST = 'http://localhost:11434';
 
@@ -25,11 +25,11 @@
 
   let connectionState: State = $state.raw({ tag: 'disconnected' });
 
-  let model: LocalModel | undefined = $state();
+  let model = $state<LocalModel>();
 </script>
 
 <main class="flex h-full w-full flex-col items-center overflow-auto">
-  <form class="flex flex-row">
+  <form class="mt-4 flex flex-row">
     <input class="input input-bordered" type="text" placeholder="Host" bind:value={host} />
     {#if connectionState.tag === 'connected'}
       <button

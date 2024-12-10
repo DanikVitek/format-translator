@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CopyPre from '$lib/CopyPre.svelte';
+  import CodeBlock from './CodeBlock.svelte';
   import type { TranslateResponseChunk } from '$lib/types';
   import { Channel, invoke } from '@tauri-apps/api/core';
   import { emit } from '@tauri-apps/api/event';
@@ -48,7 +48,7 @@
     responseState = undefined;
     const responseStream = new Channel<TranslateResponseChunk>();
     responseStream.onmessage = (message) => {
-      console.log(message);
+      // console.log(message);
       if (responseState === undefined) {
         responseState =
           message.tag === 'endOfStream'
@@ -105,12 +105,11 @@
       ? domParser.parseFromString(mdHtml, 'text/html').getElementsByTagName('body').item(0)!
       : undefined
   );
-  $inspect(document);
 </script>
 
-<div class={twMerge('flex w-max flex-col items-center', className)}>
+<div class={twMerge('flex w-full flex-col items-center px-28', className)}>
   <form class="flex w-full flex-col items-center gap-6" onsubmit={submit}>
-    <div class="join join-vertical">
+    <div class="join join-vertical w-full">
       <input
         class="input join-item input-bordered"
         type="text"
@@ -140,14 +139,14 @@
       {/if}
     </button>
   </form>
-
+  <div class="divider"></div>
   <article class="prose">
     {#if document}
       {#each document.children as child}
         {#if child.tagName === 'PRE'}
-          <CopyPre>
-            {@html child.innerHTML}
-          </CopyPre>
+          {@const code = child.querySelector('code')!}
+          {@debug code}
+          <CodeBlock language={code.className.substring(9)} text={code.innerText} />
         {:else}
           {@html child.outerHTML}
         {/if}
